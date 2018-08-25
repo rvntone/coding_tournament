@@ -13,6 +13,7 @@ import { geolocated } from 'react-geolocated';
 import { Dimmer, Loader } from 'semantic-ui-react';
 
 import { selectLocationFromMap } from '../../actions/map';
+import ClusterLayer from './clusterLayer';
 
 const MapboxGl = ReactMapboxGl({
   accessToken:
@@ -128,6 +129,7 @@ class Map extends Component {
           {this.renderWhereYouAre()}
         </Layer>
         {this.renderWhereYouArePopup()}
+        <ClusterLayer />
       </MapboxGl>
     );
   }

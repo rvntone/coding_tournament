@@ -11,6 +11,7 @@ export const saveEvent = ({
   photo,
 }) => {
   const [lng, lat] = location.trim().split(',');
+  //GeoJSON format
   const data = {
     type: 'Feature',
     properties: {
@@ -33,8 +34,16 @@ export const saveEvent = ({
   };
   const endpoint = '/events';
   const types = [
-    eventsActions.SAVI_EVENT_PROCESSING,
-    [eventsActions.SAVE_EVENT_SUCCESS],
+    eventsActions.SAVE_EVENT_PROCESSING,
+    [
+      eventsActions.SAVE_EVENT_SUCCESS,
+      () => {
+        return {
+          type: eventsActions.PUSH_EVENT_TO_LIST,
+          payload: data,
+        };
+      },
+    ],
     [eventsActions.SAVE_EVENT_FAIL],
   ];
   const method = 'POST';
@@ -44,5 +53,22 @@ export const saveEvent = ({
     types,
     method,
     data,
+  });
+};
+
+//TODO: add send zone for filtering
+export const fetchEvents = () => {
+  const endpoint = '/events';
+  const types = [
+    eventsActions.FETCH_EVENTS_PROCESSING,
+    [eventsActions.FETCH_EVENTS_SUCCESS],
+    [eventsActions.FETCH_EVENTS_FAIL],
+  ];
+  const method = 'GET';
+  return actionCreator({
+    endpoint,
+    authenticated: false,
+    types,
+    method,
   });
 };
