@@ -1,4 +1,4 @@
-const DOMAIN = 'localhost';
+const DOMAIN = 'localhost:3500';
 const PROTOCOL = 'http://';
 export const BASE_URL = PROTOCOL + DOMAIN;
 

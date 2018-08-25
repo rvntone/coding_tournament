@@ -77,7 +77,6 @@ export default class Layout extends Component {
     );
   }
   render() {
-    const { filterVisible } = this.state;
     return (
       <div>
         <TopMenu
@@ -88,9 +87,7 @@ export default class Layout extends Component {
           <Sidebar.Pushable as={Segment}>
             {this.renderAddFormSideBar()}
             {this.renderSideMenu()}
-            <Sidebar.Pusher dimmed={filterVisible}>
-              {this.renderChildren()}
-            </Sidebar.Pusher>
+            <Sidebar.Pusher>{this.renderChildren()}</Sidebar.Pusher>
           </Sidebar.Pushable>
         </Container>
       </div>

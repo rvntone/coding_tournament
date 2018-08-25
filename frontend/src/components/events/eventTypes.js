@@ -3,7 +3,7 @@ import { Icon } from 'semantic-ui-react';
 
 import './eventTypes.scss';
 
-const eventTypes = [
+export const eventTypes = [
   {
     title: 'Asalto',
     value: 0,

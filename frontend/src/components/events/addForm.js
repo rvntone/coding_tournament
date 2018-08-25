@@ -5,7 +5,7 @@ import InputMoment from 'input-moment';
 import moment from 'moment';
 import { geolocated } from 'react-geolocated';
 
-import { selectLocationFromMap } from '../../actions/map';
+import { saveEvent } from '../../actions/events';
 
 import 'input-moment/dist/input-moment.css';
 import './addForm.scss';
@@ -32,6 +32,7 @@ class AddForm extends Component {
     this.handleClick = this.handleClick.bind(this);
     this.onChangeDescription = this.onChangeDescription.bind(this);
     this.onChangeLocation = this.onChangeLocation.bind(this);
+    this.onSendClick = this.onSendClick.bind(this);
   }
   static getDerivedStateFromProps(props, state) {
     const { locationFromMap } = props;
@@ -88,7 +89,21 @@ class AddForm extends Component {
     });
   }
   onSendClick() {
-    alert('sent');
+    const {
+      description,
+      eventType,
+      dateTimeEvent,
+      location,
+      photo,
+    } = this.state;
+
+    this.props.saveEvent({
+      description,
+      eventDatetime: dateTimeEvent,
+      type: eventType,
+      location,
+      photo,
+    });
   }
   handleClick(event, titleProps) {
     const { index } = titleProps;
@@ -226,7 +241,7 @@ const mapStateToProps = state => {
   return { locationFromMap };
 };
 const mapActionsToProps = {
-  selectLocationFromMap,
+  saveEvent,
 };
 export default geolocated({
   positionOptions: {
