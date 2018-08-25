@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { ConnectedRouter } from 'react-router-redux';
 import { history } from '../store';
-import Home from './home';
+import ReduxTestPage from './reduxTestPage';
 import TestingMap from './poc/testingMap';
+import Home from './home';
 
 class Router extends Component {
   render() {
@@ -11,9 +12,10 @@ class Router extends Component {
       <ConnectedRouter history={history}>
         <Switch>
           <Route path="/poc/maptest" exact component={TestingMap} />
-          <Route path="/" exact>
-            <Home />
+          <Route path="/redux/test" exact>
+            <ReduxTestPage />
           </Route>
+          <Route component={Home} />
         </Switch>
       </ConnectedRouter>
     );
