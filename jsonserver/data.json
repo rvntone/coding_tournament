@@ -1,0 +1,197 @@
+{
+  "users": [],
+  "events": [
+    {
+      "type": "Feature",
+      "properties": {
+        "scalerank": 2,
+        "name": "Robo",
+        "comment": "Prueba",
+        "name_alt": null,
+        "lat_y": "-0.17014459999999998",
+        "long_x": "-78.4712758",
+        "region": null,
+        "subregion": null,
+        "featureclass": "Robo",
+        "eventDatetime": "2018-08-24T13:13:46.717Z",
+        "photo": {}
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-78.4712758",
+          "-0.17014459999999998"
+        ]
+      },
+      "id": 1
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "scalerank": 2,
+        "name": "Robo",
+        "comment": "Prueba 2",
+        "name_alt": null,
+        "lat_y": "-0.16897784416980244",
+        "long_x": "-78.47140991047307",
+        "region": null,
+        "subregion": null,
+        "featureclass": "Robo",
+        "eventDatetime": "2018-08-24T13:13:46.717Z",
+        "photo": {}
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-78.47140991047307",
+          "-0.16897784416980244"
+        ]
+      },
+      "id": 2
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "scalerank": 2,
+        "name": "Robo",
+        "comment": "Prueba 3",
+        "name_alt": null,
+        "lat_y": "-0.1714454655667481",
+        "long_x": "-78.47176932647673",
+        "region": null,
+        "subregion": null,
+        "featureclass": "Robo",
+        "eventDatetime": "2018-08-24T13:13:46.717Z",
+        "photo": {}
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-78.47176932647673",
+          "-0.1714454655667481"
+        ]
+      },
+      "id": 3
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "scalerank": 2,
+        "name": "Robo",
+        "comment": "Prueba 4",
+        "name_alt": null,
+        "lat_y": "-0.1700936382281668",
+        "long_x": "-78.47404383971978",
+        "region": null,
+        "subregion": null,
+        "featureclass": "Robo",
+        "eventDatetime": "2018-08-24T13:13:46.717Z",
+        "photo": {}
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-78.47404383971978",
+          "-0.1700936382281668"
+        ]
+      },
+      "id": 4
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "scalerank": 2,
+        "name": "Robo",
+        "comment": "Prueba 5",
+        "name_alt": null,
+        "lat_y": "-0.1687780076245673",
+        "long_x": "-78.47742703150554",
+        "region": null,
+        "subregion": null,
+        "featureclass": "Robo",
+        "eventDatetime": "2018-08-24T13:13:46.717Z",
+        "photo": {}
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-78.47742703150554",
+          "-0.1687780076245673"
+        ]
+      },
+      "id": 5
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "scalerank": 2,
+        "name": "Robo",
+        "comment": "Prueba 6",
+        "name_alt": null,
+        "lat_y": "-0.16544210498447853",
+        "long_x": "-78.47416079483419",
+        "region": null,
+        "subregion": null,
+        "featureclass": "Robo",
+        "eventDatetime": "2018-08-24T13:13:46.717Z",
+        "photo": {}
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-78.47416079483419",
+          "-0.16544210498447853"
+        ]
+      },
+      "id": 6
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "scalerank": 2,
+        "name": "Asalto",
+        "comment": "Prueba 222",
+        "name_alt": null,
+        "lat_y": "-0.16961145639345432",
+        "long_x": "-78.47303169597772",
+        "region": null,
+        "subregion": null,
+        "featureclass": "Asalto",
+        "eventDatetime": "2018-08-15T14:35:20.040Z",
+        "photo": {}
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-78.47303169597772",
+          "-0.16961145639345432"
+        ]
+      },
+      "id": 7
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "scalerank": 2,
+        "name": "Asalto",
+        "comment": "Prueba 222",
+        "name_alt": null,
+        "lat_y": "-0.16901600858980714",
+        "long_x": "-78.4730853401528",
+        "region": null,
+        "subregion": null,
+        "featureclass": "Asalto",
+        "eventDatetime": "2018-08-15T14:35:20.040Z",
+        "photo": {}
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-78.4730853401528",
+          "-0.16901600858980714"
+        ]
+      },
+      "id": 8
+    }
+  ]
+}
