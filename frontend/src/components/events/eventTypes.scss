@@ -1,0 +1,15 @@
+.eventTypeListPicker {
+    display: flex;
+    .eventContainer {
+        width: 70px;
+        height: 60px;
+        border: 2px solid transparent;
+        border-radius: 2px;
+        padding: 10px;
+        text-align: center;
+        margin-left: 10px;
+        &.selected {
+            border: 2px solid #139c17;
+        }
+    }
+}

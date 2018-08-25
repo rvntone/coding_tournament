@@ -2,13 +2,14 @@ import React, { Component } from 'react';
 import TopMenu from './topMenu';
 import { Container, Sidebar, Menu, Segment } from 'semantic-ui-react';
 import SideMenu from './sideMenu';
+import AddForm from '../events/addForm';
 
 export default class Layout extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      filterVisible: true,
-      addFormVisible: false,
+      filterVisible: false,
+      addFormVisible: true,
     };
     this.onToogleFilter = this.onToogleFilter.bind(this);
     this.onToogleAddForm = this.onToogleAddForm.bind(this);
@@ -27,7 +28,9 @@ export default class Layout extends Component {
       filterVisible: !addFormVisible ? false : filterVisible,
     });
   }
-  handleSidebarHide() {}
+  onChangeLocation(coords) {
+    this.addForm.onChangeLocation(coords);
+  }
   renderChildren() {
     const { children } = this.props;
     if (!children) {
@@ -40,10 +43,8 @@ export default class Layout extends Component {
     return (
       <Sidebar
         as={Menu}
-        animation="overlay"
         icon="labeled"
         direction="left"
-        onHide={this.handleSidebarHide}
         vertical
         visible={addFormVisible}
         width="very wide"
@@ -57,7 +58,7 @@ export default class Layout extends Component {
     if (!addFormVisible) {
       return null;
     }
-    return <div>ADD FORM</div>;
+    return <AddForm />;
   }
   renderSideMenu() {
     const { filterVisible } = this.state;
@@ -67,7 +68,6 @@ export default class Layout extends Component {
         animation="overlay"
         icon="labeled"
         direction="right"
-        onHide={this.handleSidebarHide}
         vertical
         visible={filterVisible}
         width="very wide"
@@ -77,7 +77,7 @@ export default class Layout extends Component {
     );
   }
   render() {
-    const { filterVisible, addFormVisible } = this.state;
+    const { filterVisible } = this.state;
     return (
       <div>
         <TopMenu
@@ -88,7 +88,7 @@ export default class Layout extends Component {
           <Sidebar.Pushable as={Segment}>
             {this.renderAddFormSideBar()}
             {this.renderSideMenu()}
-            <Sidebar.Pusher dimmed={filterVisible || addFormVisible}>
+            <Sidebar.Pusher dimmed={filterVisible}>
               {this.renderChildren()}
             </Sidebar.Pusher>
           </Sidebar.Pushable>

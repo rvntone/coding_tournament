@@ -1,0 +1,20 @@
+.addForm {
+    height: calc(100vh - 120px);
+    overflow-x: hidden;
+    overflow-y: auto;
+    .container {
+        .content {
+            padding: 10px 20px !important;
+            &.active {
+                height: calc(100vh - 288px);
+                min-height: 100px;
+                overflow-x: hidden;
+                overflow-y: auto;
+            }
+        }
+    }
+}
+
+.sendEventButtonContainer {
+    padding-top: 6px;
+}

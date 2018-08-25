@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import ReactMapboxGl, {
   Layer,
   Feature,
@@ -10,6 +11,8 @@ import ReactMapboxGl, {
 } from 'react-mapbox-gl';
 import { geolocated } from 'react-geolocated';
 import { Dimmer, Loader } from 'semantic-ui-react';
+
+import { selectLocationFromMap } from '../../actions/map';
 
 const MapboxGl = ReactMapboxGl({
   accessToken:
@@ -26,6 +29,7 @@ class Map extends Component {
     };
     this.enterYouAreHere = this.enterYouAreHere.bind(this);
     this.leaveYouAreHere = this.leaveYouAreHere.bind(this);
+    this.onClickMap = this.onClickMap.bind(this);
   }
   static getDerivedStateFromProps(props) {
     const { coords, isGeolocationAvailable } = props;
@@ -52,6 +56,10 @@ class Map extends Component {
     this.setState({
       showYouAreHerePopup: false,
     });
+  }
+  onClickMap(event, mapWithEvt) {
+    const { lngLat } = mapWithEvt;
+    this.props.selectLocationFromMap(lngLat);
   }
   renderWhereYouArePopup() {
     const { showYouAreHerePopup, position } = this.state;
@@ -124,10 +132,18 @@ class Map extends Component {
     );
   }
 }
-
+const mapStateToProps = () => ({});
+const mapActionToProps = {
+  selectLocationFromMap,
+};
 export default geolocated({
   positionOptions: {
     enableHighAccuracy: false,
   },
   userDecisionTimeout: 5000,
-})(Map);
+})(
+  connect(
+    mapStateToProps,
+    mapActionToProps,
+  )(Map),
+);

@@ -51,7 +51,7 @@ export class TestingMap extends Component {
       showYouAreHerePopup: false,
       position: null,
       popup: null,
-      zoom: 1,
+      zoom: 17,
     };
     this.enterYouAreHere = this.enterYouAreHere.bind(this);
     this.leaveYouAreHere = this.leaveYouAreHere.bind(this);
