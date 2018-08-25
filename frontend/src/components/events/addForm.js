@@ -226,8 +226,8 @@ class AddForm extends Component {
             {this.renderDescription()}
             {this.renderEventType()}
             {this.renderDateTime()}
-            {this.renderLocation()}
             {this.renderFoto()}
+            {this.renderLocation()}
           </Accordion>
         </Form>
         {this.rederSendButton()}

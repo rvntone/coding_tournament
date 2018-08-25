@@ -8,8 +8,8 @@ export default class Layout extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      filterVisible: false,
-      addFormVisible: true,
+      filterVisible: true,
+      addFormVisible: false,
     };
     this.onToogleFilter = this.onToogleFilter.bind(this);
     this.onToogleAddForm = this.onToogleAddForm.bind(this);
@@ -70,7 +70,7 @@ export default class Layout extends Component {
         direction="right"
         vertical
         visible={filterVisible}
-        width="very wide"
+        width="wide"
       >
         <SideMenu />
       </Sidebar>

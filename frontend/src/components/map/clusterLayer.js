@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Marker, Cluster } from 'react-mapbox-gl';
 
 import { fetchEvents } from '../../actions/events';
+import { eventTypes } from '../events/eventTypes';
 
 const styles = {
   clusterMarker: {
@@ -64,11 +65,19 @@ class ClusterLayer extends Component {
     );
   }
 }
-
+const filterList = (list, eventTypefilter) => {
+  if (eventTypefilter === false) {
+    return list;
+  }
+  return list.filter(event => {
+    return event.properties.name === eventTypes[eventTypefilter].title;
+  });
+};
 const mapStateToProps = state => {
   const { events } = state;
-  const { list = [] } = events;
-  return { clusterData: list };
+  const { list = [], eventTypefilter } = events;
+  const eventList = filterList(list, eventTypefilter);
+  return { clusterData: eventList };
 };
 
 const mapDispatchToProps = { fetchEvents };

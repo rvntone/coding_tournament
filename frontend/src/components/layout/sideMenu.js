@@ -4,6 +4,8 @@ import EventList from '../events/eventList';
 import Filter from '../events/filter';
 import PhotoList from '../events/photoList';
 
+import './sideMenu.scss';
+
 export default class SideMenu extends Component {
   constructor(props) {
     super(props);
@@ -22,7 +24,7 @@ export default class SideMenu extends Component {
   render() {
     const { activeIndex } = this.state;
     return (
-      <Accordion fluid as={Menu} vertical>
+      <Accordion className="filterMenu" fluid as={Menu} vertical>
         <Menu.Item>
           <Accordion.Title
             active={activeIndex === 0}

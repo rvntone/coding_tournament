@@ -6,3 +6,16 @@ export const selectLocationFromMap = coords => {
     payload: coords,
   };
 };
+
+export const setEventTypeFilter = filter => {
+  return {
+    type: mapActions.SET_EVENT_TYPE_FILTER,
+    payload: filter,
+  };
+};
+
+export const clearEventTypeFilter = () => {
+  return {
+    type: mapActions.CLEAR_EVENT_TYPE_FILTER,
+  };
+};

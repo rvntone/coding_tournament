@@ -1,0 +1,16 @@
+.filterMenu {
+    height: calc(100vh - 60px);
+    overflow-x: hidden;
+    overflow-y: auto;
+    >.item {
+        >.content {
+            padding: 20px !important;
+            &.active {
+                height: calc(100vh - 150px);
+                min-height: 100px;
+                overflow-x: hidden;
+                overflow-y: auto;
+            }
+        }
+    }
+}
